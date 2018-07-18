@@ -428,7 +428,10 @@ maximum(List, Maximum) :-
 :- meta_predicate maximum_with(2,?,?).
 maximum_with(Project, List, Maximum) :-
     map_list_to_pairs(Project, List, Pairs),
-    maximum_by(compare, Pairs, _-Maximum).
+    maximum_by(compare_first_, Pairs, _-Maximum).
+
+compare_first_(Order, Term1-_, Term2-_) :-
+    compare(Order, Term1, Term2).
 
 %% maximum_by(+Compare, ?List:list, ?Maximum) is semidet.
 %
