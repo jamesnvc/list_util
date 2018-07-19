@@ -475,7 +475,7 @@ minimum(List, Minimum) :-
 :- meta_predicate minimum_with(2,?,?).
 minimum_with(Project, List, Minimum) :-
     map_list_to_pairs(Project, List, Pairs),
-    minimum_by(compare, Pairs, _-Minimum).
+    minimum_by(compare_first_, Pairs, _-Minimum).
 
 %% minimum_by(+Compare, ?List:list, ?Minimum) is semidet.
 %
