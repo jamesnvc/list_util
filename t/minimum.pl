@@ -41,3 +41,9 @@ empty(fail) :-
     people(People),
     minimum_with(person_name, People, Person),
     Person == person("John", 27).
+
+'minimum with name stable order' :-
+    minimum_with(length, [[a], [b], [c, d]], Min1),
+    Min1 = [a],
+    minimum_with(length, [[b], [a], [c, d]], Min2),
+    Min2 = [b].

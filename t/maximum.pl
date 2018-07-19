@@ -42,3 +42,9 @@ empty(fail) :-
     people(People),
     maximum_with(person_name, People, Person),
     Person == person("Will", 63).
+
+'maxmimum with name stable order' :-
+    maximum_with(length, [[a, b], [c, d], [e]], Max1),
+    Max1 = [a, b],
+    maximum_with(length, [[c, d], [a, b], [e]], Max2),
+    Max2 = [c, d].
